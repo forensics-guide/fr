@@ -1,28 +1,27 @@
 ---
 description: >-
-  This page serves as my note for setting up network traffic monitoring on
-  Linux.
+  Esta página sirve como una nota para configurar el monitoreo del tráfico de red en Linux.
 ---
 
-# Note: Monitoring Network Traffic on Linux
+# Nota: Monitorear el tráfico de red en Linux
 
-## Configure WiFi Sharing
+## Configurar el uso compartido de WiFi
 
-Using KDE
+Usando KDE
 
-1. Plug-in a wifi adapter that supports AP mode.
-2. Right click on the Network icon on the taskbar. Click _Configure Network Connections._
-3. Click _Add,_ select _Wi-Fi (Shared)._
-4. Under Wi-Fi tab, set:
-   1. SSID: whatever you want
-   2. Limit Device: select the adapter you just plugged in.
-   3. Wireless Security: configure a WPA2 Personal password
-   4. IPv4: _Method_: _Share with other computers_
-5. Choose a connection name (basically the network profile name)
-6. Save
-7. Left click on the Network icon, click Connect on the connection name you just created.
-8. Now the AP should be started and you should see it from other devices the SSID you just configured.
+1. Conecte un adaptador wifi que soporte el modo AP.  
+2. Haga clic con el botón derecho en el icono Red de la barra de tareas. Haga clic en *Configurar conexiones de red*.  
+3. Haga clic en Agregar, seleccione *Wi-Fi (Compartido)*.  
+4. En la pestaña Wi-Fi, configure:  
+   1. SSID: el que desee  
+   2. Limitar dispositivo: seleccione el adaptador que acaba de conectar.  
+   3. Seguridad inalámbrica: configure una contraseña personal WPA2  
+   4. IPv4: *Método: Compartir con otras computadoras*  
+5. Elija un nombre de conexión (básicamente el nombre del perfil de red)  
+6. Guarde  
+7. Haga clic con el botón izquierdo en el icono Red, haga clic en Conectar en el nombre de conexión que acaba de crear.  
+8. Ahora el AP debería estar activado y debería ver desde otros dispositivos el SSID que acaba de configurar.
 
-## Configure Redirection to Intercepting Proxy
+## Configurar la redirección hacia un proxy de interceptación
 
-For mobile forensics, it is usually not necessary to intercept SSL traffic, because to intercept SSL traffic one would typically have to configure a self-signed SSL certificate authority (CA) for the mobile device, however most apps would not trust user-imported SSL CA. To make apps trust the self-signed CA would require rooting the Android device, which is not recommended because when conducting forensics one should not alter the subject device.
+Para el análisis forense móvil, generalmente no es necesario interceptar el tráfico SSL, ya que para interceptar el tráfico SSL normalmente habría que configurar una autoridad de certificación (CA) SSL autofirmada para el dispositivo móvil. Sin embargo, la mayoría de las aplicaciones no confiarían en una CA SSL importada por el usuario. Para hacer que las aplicaciones confíen en la CA autofirmada habría que hacer root el dispositivo Android, lo que no se recomienda porque al realizar análisis forense no se debe alterar el dispositivo sujeto.

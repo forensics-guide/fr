@@ -1,36 +1,36 @@
-# Smartphone System Architecture
+# Estructura del sistema de un smartphone
 
-Smartphones are basically small handheld computers, the major architectural distinction from computers are:
+Los smartphones son básicamente pequeñas computadoras portátiles que se distinguen principalmente de las computadoras por su estructura:
 
-* Systems being more locked down:
-  * Non-customizable bootloaders
-* Addition of special purpose co-processors
-  * Secure enclave
-  * Baseband
-  * Image-processing
-  * AI acceleration
+* Sistemas más restringidos:  
+  * Gestores de arranque no personalizables  
+* Inclusión de coprocesadores de propósito especial  
+  * Enclave seguro  
+  * Banda base  
+  * Procesamiento de imágenes  
+  * Aceleración de IA
 
-### Co-processors
+### Coprocesadores
 
-Co-processors are processors used only for a particular purpose other than the system. The co-processors helps the main _application processor_ to handle certain tasks, thus have to communicate with it. Co-processors often run their own embedded operating system and application and could not be directly controlled by the user. Co-processors often has privileged access to system resources and user data, so they are sometimes targets of more sophisticated exploitations. Due to the locked-down nature, it is difficult to audit or obtain forensic data from co-processors. For the purpose of this guide, you will only need to know that:
+Los coprocesadores son procesadores utilizados únicamente para un propósito concreto distinto del sistema. Los coprocesadores ayudan al procesador principal de la aplicación a gestionar determinadas tareas, por lo que deben comunicarse con él. Con frecuencia, los coprocesadores ejecutan su propio sistema operativo y aplicaciones integradas y no pueden ser controlados directamente por el usuario. Los coprocesadores suelen tener acceso privilegiado a los recursos del sistema y a los datos del usuario, por lo que a veces son objetivo de explotaciones más sofisticadas. Debido a su naturaleza restringida, es difícil auditar u obtener datos forenses de los coprocesadores. Para los fines de esta guía, usted sólo necesitará saber que:
 
-* Co-processors can be exploited
-* Co-processor exploits are sophisticated and uncommon
+* Los coprocesadores pueden ser explotados  
+* Las explotaciones de coprocesadores son sofisticadas y poco comunes
 
-The rest of this guide will thus focus on the software running on the application processor.
+Por lo tanto, el resto de esta guía se centrará en los softwares que se ejecutan en el procesador de aplicaciones.
 
-### Operating System
+### Sistema operativo
 
-Smartphone operating systems differ from computer operating systems in that they implement more controls and isolation between different system components and applications, so that a compromised component could not easily affect the whole system.
+Los sistemas operativos de los smartphones difieren de los sistemas operativos de las computadoras en que implementan más controles y aislamiento entre los diferentes componentes del sistema y las aplicaciones, de modo que un componente comprometido no podría afectar fácilmente a todo el sistema.
 
 ![An illustration of the Android software stack. For an explanation of all its components, check out https://developer.android.com/guide/platform](https://developer.android.com/guide/platform/images/android-stack_2x.png)
 
-It is possible for attackers to exploit kernel vulnerabilities, however these vulnerabilities are quite rare and usually require sophisticated techniques to exploit.
+Es posible que los atacantes exploten las vulnerabilidades del núcleo, sin embargo estas vulnerabilidades son bastante raras y, por lo general, se requieren técnicas sofisticadas para ser explotadas.
 
-### System Applications
+### Aplicaciones del sistema
 
-System applications may contain vulnerabilities. Once exploited, they can cause greater harm than exploiting user applications, because they usually have more privilege to change the underlying system. One common example is the built-in browser, which is often exploited.
+Las aplicaciones del sistema pueden contener vulnerabilidades. Cuando son explotadas, pueden causar más daño que si se explotan aplicaciones de usuario, ya que suelen tener más privilegios para realizar cambios en el sistema subyacente. Un ejemplo común es el navegador integrado, que con frecuencia es objeto de explotaciones.
 
-### User Applications
+### Aplicaciones de usuario
 
-User applications are least privileged. However, if the permissions are granted, they can access sensitive user information, so they can still cause great harm. They can also sometimes trick or exploit the underlying system to gain more control.
+Las aplicaciones de usuario son las menos privilegiadas. Sin embargo, si se les conceden los permisos, pueden acceder a información sensible del usuario, por lo que aún pueden causar daños considerables. Además, a veces pueden engañar o explotar el sistema subyacente para obtener más control.

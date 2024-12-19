@@ -1,5 +1,5 @@
-# Checking Smartphones
+# Verificación de smartphones
 
-In this section, we will go through a few steps that are generic to all types of smartphones, please consider that they are complementary to the sections on [Android](../android/) and [iOS](../ios/) you can find later in this guide.
+En esta sección, revisaremos algunos pasos generales aplicables a todo tipo de smartphones. Tenga en cuenta que estos pasos son complementarios a las secciones sobre [Android](https://pellaeon.gitbook.io/mobile-forensics/android) e [iOS](https://pellaeon.gitbook.io/mobile-forensics/ios) que encontrará más adelante en esta guía.
 
-**Warning:** because of their security model and their caracteristics, it is challenging to do live forensic on a smartphone. We are bringing here some hints on what to check on a potentially compromised device, but this process is less reliable than the Windows or MacOS processes.
+**Advertencia:** debido a su modelo de seguridad y a sus características, es complicado realizar un análisis forense en vivo en un smartphone. Aquí presentamos algunas recomendaciones sobre qué verificar en un dispositivo potencialmente comprometido, pero este proceso es menos confiable que los procesos para Windows o MacOS.
