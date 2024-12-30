@@ -1,23 +1,23 @@
-# Nota: temario
+# Nota: Curriculum
 
-1. Operación preparatoria  
-  1. ¿Grabación?  
-2. Presentaciones personales  
-3. [Preparativos](https://pellaeon.gitbook.io/mobile-forensics/preparations), actitudes y precauciones  
-   1. ¿De dónde surge este libro?  
-   2. No debería necesitar hacer análisis forenses en TODOS los dispositivos. Los análisis forenses sólo son necesarios cuando sospecha que un dispositivo está infectado con malware.  
-   3. ¿Qué cubriremos y qué NO cubriremos?  
-4. [Estructura del sistema de un smartphone](https://pellaeon.gitbook.io/mobile-forensics/smartphones/smartphone-system-architecture)  
-5. Malware móvil y panorama APT  
-   1. Tipos de malware:  
-      1. Malware móvil común (mercado masivo)  
-      2. Malware avanzado de mercado masivo y APT comunes  
-      3. APT de nivel de ciberarma como Pegasus  
-   2. ¿Es posible detectar Pegasus con técnicas básicas?  
-   3. ¿Es posible detectar Pegasus con [MVT](https://pellaeon.gitbook.io/mobile-forensics/checking-android-devices-advanced/mvt)?  
-6. (1 hora) – pausa  
-7. [Revisión básica de dispositivos Android](https://pellaeon.gitbook.io/mobile-forensics/android)  
-8. [Revisión de dispositivos iOS](https://pellaeon.gitbook.io/mobile-forensics/ios)  
-9. (2 horas) – pausa  
-10. Preguntas y respuestas \- grabación apagada  
-11. (3 horas) – fin
+1. Nettoyage  
+  1. Enregistrement ?  
+2. Présentations personnelles  
+3. [Préparations](https://pellaeon.gitbook.io/mobile-forensics/preparations), attitudes et précautions  
+  1. D'où vient ce livre ?  
+    2. Vous ne devriez pas avoir besoin de faire des analyses sur TOUS les appareils \! L'analyse est uniquement effectuée lorsque vous soupçonnez qu'un appareil est infecté par un logiciel malveillant.  
+  3. Qu'allons-nous aborder et ne PAS aborder ?  
+4. [Architecture des systèmes de smartphones](https://pellaeon.gitbook.io/mobile-forensics/smartphones/smartphone-system-architecture)  
+5. Logiciels malveillants sur mobile et paysage des APT  
+  1. Types de logiciels malveillants :  
+    1. Logiciels malveillants courants (grand public)  
+    2. Logiciels malveillants avancés (grand public) et APT courants  
+    3. APT de type arme numérique comme Pegasus  
+  2. Puis-je trouver Pegasus avec des techniques de base ?  
+  3. Puis-je trouver Pegasus avec [MVT](https://pellaeon.gitbook.io/mobile-forensics/checking-android-devices-advanced/mvt) ?  
+6.  (1 heure) \- pause  
+7. [Vérification de base des appareils Android](https://pellaeon.gitbook.io/mobile-forensics/android)  
+8. [Vérification des appareils iOS](https://pellaeon.gitbook.io/mobile-forensics/ios)  
+9.  (2 heures) \- pause  
+10. Q/R \- enregistrement arrêté  
+11. (3 heures) \- fin

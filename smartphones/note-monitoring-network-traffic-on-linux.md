@@ -1,27 +1,27 @@
 ---
 description: >-
-  Esta página sirve como una nota para configurar el monitoreo del tráfico de red en Linux.
+  Cette page sert de remarque pour la configuration de la surveillance du trafic réseau sur Linux.
 ---
 
-# Nota: Monitorear el tráfico de red en Linux
+# Remarque : surveillance du trafic réseau sur Linux
 
-## Configurar el uso compartido de WiFi
+## Configuration du partage Wi-Fi
 
-Usando KDE
+Utiliser KDE
 
-1. Conecte un adaptador wifi que soporte el modo AP.  
-2. Haga clic con el botón derecho en el icono Red de la barra de tareas. Haga clic en *Configurar conexiones de red*.  
-3. Haga clic en Agregar, seleccione *Wi-Fi (Compartido)*.  
-4. En la pestaña Wi-Fi, configure:  
-   1. SSID: el que desee  
-   2. Limitar dispositivo: seleccione el adaptador que acaba de conectar.  
-   3. Seguridad inalámbrica: configure una contraseña personal WPA2  
-   4. IPv4: *Método: Compartir con otras computadoras*  
-5. Elija un nombre de conexión (básicamente el nombre del perfil de red)  
-6. Guarde  
-7. Haga clic con el botón izquierdo en el icono Red, haga clic en Conectar en el nombre de conexión que acaba de crear.  
-8. Ahora el AP debería estar activado y debería ver desde otros dispositivos el SSID que acaba de configurar.
+1. Branchez un adaptateur Wi-Fi qui prend en charge le mode AP.  
+2. Cliquez avec le bouton droit de la souris sur l'icône Réseau dans la barre des tâches. Cliquez sur *Configurer les connexions réseau*.  
+3. Cliquez sur Ajouter, sélectionnez *Wi-Fi (partagé)*.  
+4. Sous l'onglet Wi-Fi, configurez :  
+  1. SSID : ce que vous voulez  
+  2. Périphérique : sélectionnez l'adaptateur que vous venez de brancher.  
+  3. Sécurité sans fil : configurez un mot de passe personnel WPA2  
+  4. IPv4 : *Méthode : partager avec les autres ordinateurs*  
+5. Choisissez un nom de connexion (le nom du profil réseau)  
+6. Enregistrez  
+7. Cliquez avec le bouton gauche de la souris sur l'icône du réseau, puis cliquez sur Connecter sur le nom de connexion que vous venez de créer.  
+8. L'AP devrait être démarré et vous devriez le voir à partir d'autres appareils avec le SSID que vous venez de configurer.
 
-## Configurar la redirección hacia un proxy de interceptación
+## Configuration d'une redirection vers un proxy d'interception
 
-Para el análisis forense móvil, generalmente no es necesario interceptar el tráfico SSL, ya que para interceptar el tráfico SSL normalmente habría que configurar una autoridad de certificación (CA) SSL autofirmada para el dispositivo móvil. Sin embargo, la mayoría de las aplicaciones no confiarían en una CA SSL importada por el usuario. Para hacer que las aplicaciones confíen en la CA autofirmada habría que hacer root el dispositivo Android, lo que no se recomienda porque al realizar análisis forense no se debe alterar el dispositivo sujeto.
+Pour les analyses mobiles, il n'est généralement pas nécessaire d'intercepter le trafic SSL, car pour y parvenir, il faudrait normalement configurer une autorité de certification (CA) SSL autosignée pour l'appareil mobile et la plupart des applications ne font pas confiance aux CA SSL importés par l'utilisateur. Pour que les applications fassent confiance à l'autorité de certification autosignée, il faudrait rooter le périphérique Android, ce qui n'est pas recommandé, car lors de la conduite d'une analyse approfondie, le périphérique en question ne devrait pas être modifié.

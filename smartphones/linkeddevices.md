@@ -1,29 +1,29 @@
-# Verificar los dispositivos vinculados a las aplicaciones de mensajería
+# Vérifier les appareils liés aux applications de messagerie instantanée
 
-Muchas aplicaciones de mensajería permiten vincular otro dispositivo a la cuenta para leer y enviar mensajes desde una computadora. Es posible utilizar esa función para acceder ilegítimamente a la cuenta y a los mensajes intercambiados por la aplicación. Por ello, es importante verificar que no existan sesiones desconocidas ni dispositivos vinculados.
+De nombreuses applications de messagerie instantanée permettent de lier un autre appareil au compte afin de lire et d'envoyer des messages à partir d'un ordinateur. Il est possible d'utiliser cette fonctionnalité pour accéder illégalement au compte et aux messages échangés par l'application, il est donc intéressant de vérifier qu'il n'y a pas de session inconnue ou de périphériques liés.
 
 ## Signal
 
-Vaya a la página "Dispositivos vinculados" en Parámetros (... en el menú) > Ajustes. Verá una lista de dispositivos conectados, puede hacer clic sobre cualquier dispositivo desconocido para desconectarlo.
+Accédez à la page « Appareils liés » dans Paramètres (... dans le menu) \> Paramètres. Vous verrez une liste des appareils connectés. Vous pouvez appuyer sur n'importe quel appareil inconnu afin de le déconnecter.
 
 ![A screenshot of the settings panel of the Signal messenger, with 'linked devices' selected](../.gitbook/assets/signal1.png)
 
 ## WhatsApp
 
-Vaya a Ajustes (... en el menú) y haga clic en "WhatsApp Web".
+Accédez à Paramètres (... dans le menu) et cliquez sur « WhatsApp Web ».
 
-Aquí podrá ver todos los navegadores web conectados a su cuenta de WhatsApp.  
+Vous pouvez voir ici tous les navigateurs Web connectés à votre compte WhatsApp.   
 
 ![A screenshot of WhatsApp, showing that it was last active today at 4:58pm on Chrome on Linux](../.gitbook/assets/whatsapp.png)
 
 ## Telegram
 
-En su aplicación Telegram, vaya a la página Ajustes > Privacidad y seguridad > Sesiones activas. Esta página le muestra todas las sesiones activas que tenga con su cuenta. Puede hacer clic en cualquier sesión para finalizarla.
+Dans votre application Telegram, visitez la page Paramètres \> Confidentialité et sécurité \> Sessions actives. Cette page vous montre toutes les sessions actives liées à votre compte. Vous pouvez appuyer sur n'importe quelle session pour la terminer.
 
 ![A screenshot of active sessions in the Telegram messenger. It shows sessions in Telegram Web on Chrome on Linux and through a service called `ilovecrumble` running on Linux Desktop](../.gitbook/assets/telegram.png)
 
 ## Wire
 
-En la aplicación Wire, haga clic en su perfil y vaya a `Ajustes > Dispositivos`. En esta página podrá ver todas las sesiones abiertas para su cuenta, incluidas las aplicaciones para smartphones, las aplicaciones de escritorio y las sesiones web. Puede hacer clic en cualquiera de estas sesiones y eliminar el dispositivo (necesitará su contraseña para hacerlo).  
+Dans l'application Wire, cliquez sur votre profil et accédez à  `Paramètres > Appareils` . Sur cette page, vous pouvez voir toutes les sessions ouvertes pour votre compte, y compris les applications pour smartphone, les applications de bureau et les sessions Web. Vous pouvez cliquer sur l'une de ces sessions et retirer le périphérique (vous aurez besoin de votre mot de passe pour le faire).  
 
 ![A screenshot of active sessions in Wire messenger. It shows that Wire is running on a Fairphone and on two other devices: a Google Pixel and a Linux install](../.gitbook/assets/wire.png)

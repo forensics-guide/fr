@@ -1,24 +1,25 @@
-# Verificar los mensajes sospechosos
+# Vérifier la présence de messages suspects
 
-Mensajes que contienen enlaces son un vector de ataque muy común.
+Les messages contenant des liens sont un vecteur d'attaque courant.
 
 ![A screenshot of an online translation service, showing a message in Arabic and a translation into English. The translation says 'Turkey asks the Egyptian opposition channels to stop criticizing Egypt, and Cairo comments on the move...'](https://citizenlab.ca/wp-content/uploads/2021/12/Fig-7.png)
 
-Los enlaces pueden enviarse desde cualquier aplicación de mensajería o SMS. Existen varios tipos de enlaces maliciosos:
+*Un message contenant un lien qui infecte la cible avec le logiciel malveillant Cytrox Predator. Source : Citizen Lab*
 
-| Objetivo del enlace | Finalidad del atacante | Sofisticación | Mitigación |
+Les liens peuvent être envoyés à partir de n'importe quelle application de messagerie instantanée ou SMS. Il existe quelques types de liens malveillants :
+
+| Cible du lien | Objectif du cybercriminel | Complexité | Atténuation |
 | :---- | :---- | :---- | :---- |
-| Sitio web de phishing, como una página web que parece la página de inicio de sesión de Google | Engañar al usuario para que ingrese datos personales o contraseñas | Bajo | Verificar los nombres de dominio de las páginas web y los certificados SSL |
-| Descarga de aplicaciones | Convencer al usuario para descargar e instalar la aplicación | Bajo | No instalar aplicaciones fuera de las tiendas de aplicaciones |
-| Página web que contenga explotación web, como XSS (Cross Site Scripting) | Robar las cookies de la sesión en línea u operar la sesión abierta actual | Media | No hacer clic en enlaces enviados por desconocidos |
-| Página web que contenga una explotación del navegador | Explotar la vulnerabilidad del navegador o de la aplicación | Alto | No hacer clic en enlaces enviados por desconocidos |
+| Site d'hameçonnage, comme une page Web qui ressemble à la page de connexion de Google | Inciter l'utilisateur à saisir des données personnelles ou des mots de passe | Faible | Vérifier les noms de domaine et les certificats SSL des pages Web |
+| Téléchargement d'application | Convaincre l'utilisateur de télécharger et d'installer l'application | Faible | Ne pas installer les applications en dehors des magasins d'applications |
+| Page Web contenant des exploitations de failles Web, tels que XSS (Cross Site Scripting) | Voler les cookies de session en ligne ou exploiter la session actuellement ouverte | Moyenne | Ne pas cliquer sur les liens envoyés par des inconnus |
+| Page Web contenant une exploitation de faille de navigateur | Exploiter la vulnérabilité du navigateur ou de l'application | Élevée | Ne pas cliquer sur les liens envoyés par des inconnus |
 
-### Guardar mensajes
+### Enregistrement des messages
 
-1. Copie el mensaje completo, incluido el enlace, en el portapapeles  
-2. Alternativamente, guarde una captura de pantalla que contenga el texto completo  
-3. Si es posible, archive el enlace utilizando [Wayback Machine](https://web.archive.org/)
+1. Copiez le message entier, y compris le lien dans le presse-papiers  
+2. Vous pouvez également enregistrer une capture d'écran contenant l'entièreté du texte  
+3. Si vous le pouvez, archivez le lien en utilisant la [Wayback Machine](https://web.archive.org/)
 
-### Verificar enlaces  
-
-Simplemente realice una búsqueda en Google del enlace, o pegue el enlace en sitios como VirusTotal.
+### Vérification des liens
+Effectuez simplement une recherche du lien sur Google, ou collez le lien dans des sites comme VirusTotal.

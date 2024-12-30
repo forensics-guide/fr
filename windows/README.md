@@ -1,9 +1,9 @@
-# Verificar computadoras con Windows
+# Vérification des ordinateurs Windows
 
-En esta sección, repasaremos algunos de los pasos básicos que hay que seguir a la hora de verificar una computadora Windows sospechosa. A continuación se presentan las herramientas (con enlaces a sus respectivas páginas de descarga) que vamos a mostrar aquí:
+Dans cette section, nous allons passer en revue certaines des étapes de base à suivre lors de la vérification d'un ordinateur Windows suspect. Voici les outils (avec des liens vers leurs pages de téléchargement respectives) que nous allons présenter ici :
 
-* [Sysinternals Autoruns](https://technet.microsoft.com/en-ca/sysinternals/bb963902.aspx) producido por Microsoft.
-* [Sysinternals Process Explorer](https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer) producido por Microsoft.
-* [CrowdInspect](https://www.crowdstrike.com/resources/community-tools/crowdinspect-tool/) producido por CrowdStrike.
-* [Sysinternals TCPView](https://technet.microsoft.com/en-us/sysinternals/tcpview.aspx) producido por Microsoft.
-* [pcqf](https://github.com/botherder/pcqf) (originalmente SnoopDigg) producido por Claudio Guarnieri. (Última actualización en 2021.)
+* [Sysinternals Autoruns](https://technet.microsoft.com/en-ca/sysinternals/bb963902.aspx) produit par Microsoft.  
+* [Sysinternals Process Explorer](https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer) produit par Microsoft.  
+* [CrowdInspect](https://www.crowdstrike.com/resources/community-tools/crowdinspect-tool/) produit par CrowdStrike.  
+* [Sysinternals TCPView](https://technet.microsoft.com/en-us/sysinternals/tcpview.aspx) produit par Microsoft.  
+* [pcqf](https://github.com/botherder/pcqf) (anciennement SnoopDigg) produit par Claudio Guarnieri. (Dernière mise à jour en 2021.)

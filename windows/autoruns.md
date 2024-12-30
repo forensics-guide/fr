@@ -1,62 +1,62 @@
-# Revisar programas que se ejecutan al encender la computadora
+# Examen des programmes lancés au démarrage
 
-Normalmente, los programas espía necesitan encontrar una forma de ejecutarse al encender una computadora cuando ésta se reinicia. Por eso, revisar las aplicaciones que se inician automáticamente es uno de los primeros controles que hay que realizar cuando se buscan posibles infecciones. Las computadoras con Windows tienen diferentes formas para habilitar el inicio automático, y los programas espía suelen utilizar trucos para parecer legítimos y/o evitar los métodos más comunes.
+Normalement, les logiciels espions doivent trouver un moyen d'être exécutés au démarrage de l'ordinateur. La vérification des applications démarrant automatiquement est donc l'un des premiers contrôles à effectuer lors de la recherche d'infections potentielles. Les ordinateurs Windows ont différentes façons d'activer le lancement automatique, et les logiciels espions utilisent souvent des astuces pour paraître légitimes et/ou éviter les méthodes les plus courantes.
 
-[Sysinternals Autoruns](https://technet.microsoft.com/en-ca/sysinternals/bb963902.aspx) es una herramienta que permite hacer una lista exhaustiva de los programas que se ejecutan al iniciarse el sistema. Si es posible, usted debería ejecutar este programa como Administrador:
+[Sysinternals Autoruns](https://technet.microsoft.com/en-ca/sysinternals/bb963902.aspx) est un outil qui permet d'énumérer de manière exhaustive les programmes lancés au démarrage. Si possible, vous devriez exécuter ce programme en tant qu'administrateur :
 
 ![A screenshot of Windows Sysinternals Autoruns, which allows you to select and study autorun entries. Each entry in this list is sorted by HKLM or HKCU. The program has many different tabs open, with a tab called 'everything' currently in focus.](../.gitbook/assets/autoruns.png)
 
-Todos los resultados se mostrarán por defecto en la pestaña principal. Al hacer clic en las demás pestañas disponibles, los resultados se filtrarán por el tipo de ejecución automática correspondiente. En general, los más interesantes serían `Logon`, `Scheduled Tasks`, `Services`.
+Tous les résultats seront affichés par défaut dans l'onglet principal. En cliquant sur les autres onglets disponibles, vous filtrerez les résultats par type de lancement automatique. Les plus intéressantes seraient généralement `Ouverture de session`, `Tâches planifiées` et `Services`.
 
-## Buscar patrones sospechosos
+## Recherche de motifs suspects
 
-Autoruns no determina automáticamente qué archivos son maliciosos y cuáles no. Al igual que con el resto de esta metodología, es necesario que con el tiempo se familiarice lo suficiente con sus resultados para identificar rápidamente cualquier anomalía o entrada que no reconozca. Sin embargo, Autoruns puede proporcionar algunas indicaciones útiles.
+Autoruns ne détermine pas automatiquement pour vous quels fichiers sont malveillants et lesquels ne le sont pas. Comme pour le reste de cette méthodologie, il est nécessaire que vous soyez suffisamment familiarisé(e) avec ses résultats pour repérer rapidement les anomalies ou les entrées que vous ne reconnaissez pas. Cependant, Autoruns peut fournir des indications utiles.
 
-A veces, Autoruns puede marcar una fila concreta con un fondo rojo. Esto puede justificar una inspección más detallada, ya que podría ser señal de una entrada inusual. Por otro lado, las entradas marcadas con fondo amarillo se refieren a archivos que ya no existen en la computadora. Por lo tanto, estas entradas están rotas.
+Parfois, Autoruns peut marquer une ligne particulière avec un fond rouge. Ces éléments pourraient justifier une inspection plus approfondie, car il pourrait s'agir d'un signe d'entrée inhabituelle. Les entrées marquées d'un fond jaune font plutôt référence à des fichiers qui n'existent plus sur l'ordinateur. Ces entrées sont donc brisées.
 
-A continuación se ofrecen algunas sugerencias sobre los patrones a tener en cuenta.
+Voici quelques suggestions de modèles à surveiller.
 
-### 1. Verificar firmas de imágenes
+### 1. Vérifier les signatures d'images
 
-En versiones modernas de Windows, generalmente se requiere que las aplicaciones legítimas estén "firmadas" con un certificado de desarrollador. Dichos certificados permiten verificar el productor de un programa en particular (como Microsoft, Google, Adobe, u otro). Las aplicaciones no firmadas suelen estar más controladas y examinadas por los mecanismos de seguridad de Windows (como su antivirus integrado, Windows Defender). Un primer control útil es verificar si todas las aplicaciones que se ejecutan automáticamente están efectivamente firmadas, y esto puede hacerse haciendo clic en *Options \> Scan Options* and enabling *Verify code signatures*.
+Dans les versions modernes de Windows, les applications légitimes doivent généralement être « signées » avec un certificat de développeur. Ces certificats permettent de vérifier le producteur d'un programme particulier (comme Microsoft, Google, Adobe ou autre). Les applications qui ne sont pas signées normalement sont plus contrôlées et examinées par les mécanismes de sécurité de Windows (comme son antivirus intégré, Windows Defender). Une première vérification utile consiste à vérifier si toutes les applications lancées automatiquement sont bien signées, et cela peut être fait en cliquant sur *Options \> Options d'analyse* et en activant *Vérifier les signatures de code*.
 
 ![A dialog box that says 'Autoruns scan options'. Four checkboxes are present: 'Scan only per-user locations,' 'Verify code signatures,' 'Check VirusTotal.com,' and, nested under the VirusTotal one, 'Submit Unknown Images'. Only the 'Verify code signatures' check box is selected.](../.gitbook/assets/autoruns5.png)
 
-Esto volverá a lanzar el análisis de Autoruns y añadirá una nueva columna llamada "Publisher". Las aplicaciones correctamente firmadas se marcarán como "(Verified)":
+Cela relancera l'analyse d'Autoruns et ajoutera une nouvelle colonne appelée « Éditeur ». Les applications correctement signées seront marquées comme « (Vérifiée) » :
 
 ![A very similar screenshot of Windows Sysinternals Autoruns as before, except that the sorting menu has one more option, called 'Publisher'. Some applications have a label at the end of their name which says '(Verified)'](../.gitbook/assets/autoruns4.png)
 
-**Atención**: No todas las entradas Autorun verificadas son necesariamente seguras. En ocasiones, los atacantes abusan a propósito de las aplicaciones verificadas legítimas para parecer menos sospechosos, y usarlas como lanzadores para luego cargar y ejecutar código malicioso. Esto se realiza a veces utilizando, por ejemplo, `rundll32.exe` u otras aplicaciones afectadas por lo que se conoce como [DLL Sideloading](https://attack.mitre.org/techniques/T1073/).
+**Attention** : toutes les entrées vérifiées du démarrage automatique ne sont pas nécessairement sûres. Parfois, les cybercriminels utilisent délibérément des applications vérifiées légitimes pour paraître moins suspectes, et les utilisent comme lanceurs pour charger et exécuter du code malveillant. Cela se fait parfois en utilisant, par exemple, Microsoft `rundll32.exe` ou d'autres applications affectées par ce qu'on appelle le DLL [Sideloading](https://attack.mitre.org/techniques/T1073/).
 
-### 2. Verificar el nombre de la entrada de Autorun
+### 2. Vérifier le nom de l'entrée du démarrage automatique
 
-La entrada de Autorun muestra el nombre asignado a la aplicación por sus desarrolladores. Aunque esta información puede ser falsificada, a veces los atacantes son tan perezosos que escriben mal nombres legítimos falsificados (por ejemplo, "Micorsoft Ofice" o "Crhome") o simplemente dejan caracteres y números aleatorios.
+L'entrée de démarrage automatique affiche le nom qui a été donné à l'application par ses développeurs. Ces informations peuvent être falsifiées, mais parfois les cybercriminels sont assez paresseux pour soit imiter des noms légitimes (p. ex., « Micorsoft Ofice » ou « Crhome ») soit simplement laisser des caractères et des numéros aléatoires.
 
-### **3. Compruebe la descripción del programa
+### 3. Vérifier la description du programme
 
-Del mismo modo, éste no es un indicador fiable, pero las aplicaciones legítimas deberían tener, por lo general, una descripción del programa visible.
+De même, bien qu'il ne s'agisse pas d'un indicateur fiable, les applications légitimes devraient généralement avoir une description du programme visible.
 
-### 4. Verificar la ruta de la imagen
+### 4. Vérifier le chemin d'accès de l'image
 
-Windows proporciona algunas carpetas estándar desde las que normalmente se instalan y ejecutan las aplicaciones legítimas. Los servicios del propio sistema operativo suelen estar ubicados en `C:\Windows\`, mientras que las aplicaciones instaladas por el usuario suelen estar ubicadas en `C:\Program Files\` o `C:\Program Files (x86)\`. Puesto que la instalación de programas en esas carpetas debería requerir cierta confirmación por parte del usuario, los atacantes suelen colocar sus archivos maliciosos en carpetas menos típicas, como `C:\Users\<Username\>\AppData\` u otras subcarpetas de `C:\Users\`.
+Windows fournit des dossiers standard où les applications légitimes sont normalement installées et exécutées. Les services du système d'exploitation lui-même sont normalement situés dans `C:\Windows\`, tandis que les applications installées par l'utilisateur sont généralement situées dans `C:\Program Files\` ou `C:\Program Files (x86)\`. Vu que l'installation de programmes dans ces dossiers devrait nécessiter une certaine confirmation de l'utilisateur, les cybercriminels placent souvent leurs fichiers malveillants dans des dossiers moins typiques, tels que `C:\Users\<Username>\AppData\` ou d'autres sous-répertoires dans `C:\Users\`.
 
-Ejemplo de entradas sospechosas:
+Exemple d'entrée suspecte :
 
-* El [programa espía KeyBoy](https://citizenlab.ca/2016/11/parliament-keyboy/) crea una clave de registro en `HKEY\_CURRENT\_USER\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\shell` con el valor `explorer.exe,C:\\Windows\\system32\\rundll32.exe "%LOCALAPPDATA%\\cfs.dal" cfsUpdate`  
-* Un malware en particular utilizado en Asia Central se basa en el uso de VBScripts, que Autoruns resalta con un fondo rojo, simulando ser software de Adobe y Google. Estos resultados justificarían sin duda una inspección más detallada. Además, los scripts se ubican en `C:\Users\<Username>\AppData\`:
+* Le [logiciel espion KeyBoy](https://citizenlab.ca/2016/11/parliament-keyboy/) crée une clé de registre dans `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\shell` avec la valeur `explorer.exe,C:\Windows\system32\rundll32.exe "%LOCALAPPDATA%\cfs.dal" cfsUpdate`  
+* Un logiciel malveillant particulier utilisé en Asie centrale repose sur l'utilisation de VBScripts, qui sont mis en évidence par Autoruns avec un fond rouge, car ils se font passer pour des logiciels Adobe et Google. Ces résultats justifieraient certainement une inspection plus approfondie. En outre, les scripts sont situés dans `C:\Users\<Username>\AppData\`:
 
 ![Another screenshot of Windows Sysinternals Autoruns. We are in the 'Everything' tab and several entries are selected. Under 'Task Scheduler', we see three entries highlighted in red. They are labeled 'Adobe Flash Player File,' 'Adobe Flash Player Key,' and 'GoogleUpdateTaskMachineKernel'](../.gitbook/assets/autoruns_script.png)
 
-### Opcional: 5. Buscar programas en VirusTotal
+### Facultatif : 5. Recherche de programmes sur VirusTotal
 
-Opcionalmente, Autoruns permite verificar los archivos binarios en [VirusTotal](https://www.virustotal.com/gui/home/upload), lo que ayuda a identificar inmediatamente cualquier programa malicioso conocido y ampliamente detectado por el software Antivirus (lea más sobre esto en la siguiente sección). Para activar esta verificación, vaya a *Options \> Scan Options* y habilite "*Check VirusTotal.com*". Asegúrese de no activar "Submit Unknown Files", ya que haría que Autoruns subiera automáticamente los archivos locales al servicio, en lugar de limitarse a buscar sus hashes criptográficos. VirusTotal es una empresa, ahora propiedad de Alphabet (la empresa matriz de Google), y proporciona acceso comercial a sus datos a investigadores de seguridad y clientes de todo el mundo. Quienes tienen acceso a los servicios comerciales de VirusTotal pueden buscar y descargar cualquier archivo cargado. Por lo tanto, es posible que desee evitar enviar inadvertidamente cualquier archivo que pueda ser confidencial.
+En option, Autoruns permet de vérifier les fichiers binaires avec [VirusTotal](https://www.virustotal.com/gui/home/upload), ce qui contribue à identifier immédiatement tout programme malveillant bien connu et largement détecté par le logiciel antivirus (vous pouvez en apprendre davantage à ce sujet dans la section ci-dessous). Pour activer cette vérification, accédez à *Options \> Options d'analyse* et activez « *Consulter VirusTotal.com* ». Faites attention de ne pas activer « Soumettre des fichiers inconnus », car cela ferait en sorte qu'Autoruns envoie automatiquement les fichiers locaux vers le service, plutôt que de simplement chercher leurs hachages cryptographiques. VirusTotal est une société, maintenant détenue par Alphabet (la maison mère de Google), qui fournit un accès commercial à ses données aux chercheurs en sécurité et aux clients du monde entier. Les personnes ayant accès aux services commerciaux de VirusTotal peuvent consulter et télécharger n'importe quel fichier envoyé. Par conséquent, vous devriez éviter de soumettre par inadvertance des fichiers qui pourraient être confidentiels.
 
 ![A dialog box that says 'Autoruns scan options'. Four checkboxes are present: 'Scan only per-user locations,' 'Verify code signatures,' 'Check VirusTotal.com,' and, nested under the VirusTotal one, 'Submit Unknown Images'. Only the 'CheckVirusTotal.com' check box is selected.](../.gitbook/assets/autoruns2.png)
 
-Una vez habilitada la opción VirusTotal, los resultados tardarán algún tiempo en aparecer. Eventualmente, debería ver una columna de VirusTotal mostrando los resultados del escaneo Antivirus. Los resultados aparecen como un valor *X/Y*, donde *X* es el número de detecciones positivas y Y es la cantidad total de software Antivirus con la que se escaneó el archivo.
+Une fois l'option VirusTotal activée, il faudra un certain temps pour que les résultats apparaissent. Vous devriez voir une colonne VirusTotal affichant les résultats de l'analyse antivirus. Les résultats apparaissent sous la forme d'une valeur *X/Y*, où *X* est le nombre de détections positives et Y est la quantité totale de logiciels antivirus avec lesquels le fichier a été analysé.
 
 ![A very similar screenshot of Windows Sysinternals Autoruns as the first one, except that the sorting menu has one more option, called 'VirusTotal'. Each entry has a VirusTotal score next to it.](../.gitbook/assets/autoruns3.png)
 
-Si no aparece ningún resultado, significa que ese programa en particular no ha sido cargado previamente en VirusTotal, y podría justificar una inspección adicional. A veces, verá algunas aplicaciones con un número de detección bajo (1 o 2): a menudo se trata de falsos positivos. Los resultados de VirusTotal que muestran un número de detección más alto (por ejemplo, 5 o superior) suelen ser una señal confiable de que esa aplicación en particular es maliciosa. Haga clic en el enlace de la *X/Y* para abrir el navegador al análisis de VirusTotal, donde podrá ver más detalles, como los identificadores de malware utilizados por el software antivirus compatible.
+Si aucun résultat n'est affiché, cela signifie que ce programme particulier n'a pas été téléversé précédemment sur VirusTotal et qu'il peut justifier une inspection supplémentaire. Parfois, vous verrez des applications avec un faible nombre de détection (1 ou 2) : il s'agit souvent de fausses alertes. Les résultats de VirusTotal montrant un nombre de détection plus élevé (par exemple, 5 et plus) sont généralement un signe fiable que cette application particulière est malveillante. En cliquant sur le lien du *X/Y*, vous ouvrirez le navigateur sur l'analyse VirusTotal, où vous pourrez voir plus de détails, tels que les identifiants de logiciels malveillants utilisés par le logiciel antivirus pris en charge.
 
-**Tome en consideración**: [Como ya se ha indicado](https://github.com/pellaeon/guide-to-quick-forensics/blob/master/windows/safety.md), en circunstancias normales es preferible no conectar la computadora analizada a Internet. Sin conexión a Internet, no podrá realizar comprobaciones inmediatas con VirusTotal. Sin embargo, es posible guardar los resultados de Autoruns haciendo clic en *File \> Save*... y abrir posteriormente los resultados desde otra computadora con conexión a Internet.
+**Veuillez noter** : [tel que mentionné précédemment](https://github.com/pellaeon/guide-to-quick-forensics/blob/master/windows/safety.md), dans des circonstances normales, vous devriez éviter de connecter l'ordinateur testé à Internet. Sans connexion à Internet, vous ne pouvez pas effectuer de vérification immédiate avec VirusTotal. Il est toutefois possible d'enregistrer les résultats de l'analyse en cliquant sur *Fichier \> Enregistrer*... et d'ouvrir ultérieurement les résultats à partir d'un ordinateur séparé avec une connexion à Internet.

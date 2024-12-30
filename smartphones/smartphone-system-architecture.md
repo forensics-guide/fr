@@ -1,36 +1,36 @@
-# Estructura del sistema de un smartphone
+# Architecture des systèmes de smartphones
 
-Los smartphones son básicamente pequeñas computadoras portátiles que se distinguen principalmente de las computadoras por su estructura:
+Les smartphones sont essentiellement de petits ordinateurs portables, la principale différence architecturale par rapport aux ordinateurs étant :
 
-* Sistemas más restringidos:  
-  * Gestores de arranque no personalizables  
-* Inclusión de coprocesadores de propósito especial  
-  * Enclave seguro  
-  * Banda base  
-  * Procesamiento de imágenes  
-  * Aceleración de IA
+* Systèmes plus verrouillés :  
+  * Chargeurs d'amorçage non personnalisables  
+* Ajout de coprocesseurs à but spécialisé  
+  * Enclave sécurisée  
+  * Bande de base  
+  * Traitement des images  
+  * Accélération IA
 
-### Coprocesadores
+### Coprocesseurs
 
-Los coprocesadores son procesadores utilizados únicamente para un propósito concreto distinto del sistema. Los coprocesadores ayudan al procesador principal de la aplicación a gestionar determinadas tareas, por lo que deben comunicarse con él. Con frecuencia, los coprocesadores ejecutan su propio sistema operativo y aplicaciones integradas y no pueden ser controlados directamente por el usuario. Los coprocesadores suelen tener acceso privilegiado a los recursos del sistema y a los datos del usuario, por lo que a veces son objetivo de explotaciones más sofisticadas. Debido a su naturaleza restringida, es difícil auditar u obtener datos forenses de los coprocesadores. Para los fines de esta guía, usted sólo necesitará saber que:
+Les coprocesseurs sont des processeurs utilisés uniquement à une fin particulière autre que l'exploitation du système. Les coprocesseurs aident le processeur principal à gérer certaines tâches et doivent donc communiquer avec lui. Les coprocesseurs utilisent souvent leur propre système d'exploitation et application intégrés, et ne peuvent pas être directement contrôlés par l'utilisateur. Les coprocesseurs ont souvent un accès privilégié aux ressources du système et aux données des utilisateurs, de sorte qu'ils sont parfois la cible d'exploitations plus sophistiquées. En raison de leur nature verrouillée, il est difficile d'effectuer des audits ou d'obtenir des données d'analyse à partir des coprocesseurs. Pour les besoins de ce guide, vous devez seulement savoir que :
 
-* Los coprocesadores pueden ser explotados  
-* Las explotaciones de coprocesadores son sofisticadas y poco comunes
+* Les coprocesseurs peuvent présenter des failles qui peuvent être exploitées  
+* Les exploitations de failles des coprocesseurs sont sophistiquées et peu communes
 
-Por lo tanto, el resto de esta guía se centrará en los softwares que se ejecutan en el procesador de aplicaciones.
+Le reste de ce guide se concentrera donc sur les logiciels fonctionnant sur le processeur d'application.
 
-### Sistema operativo
+### Système d'exploitation
 
-Los sistemas operativos de los smartphones difieren de los sistemas operativos de las computadoras en que implementan más controles y aislamiento entre los diferentes componentes del sistema y las aplicaciones, de modo que un componente comprometido no podría afectar fácilmente a todo el sistema.
+Les systèmes d'exploitation des smartphones diffèrent des systèmes d'exploitation des ordinateurs en ce sens qu'ils mettent en œuvre davantage de contrôles et d'isolement entre les différents composants du système et les applications, de sorte qu'un composant compromis ne pourrait pas facilement affecter l'ensemble du système.
 
 ![An illustration of the Android software stack. For an explanation of all its components, check out https://developer.android.com/guide/platform](https://developer.android.com/guide/platform/images/android-stack_2x.png)
 
-Es posible que los atacantes exploten las vulnerabilidades del núcleo, sin embargo estas vulnerabilidades son bastante raras y, por lo general, se requieren técnicas sofisticadas para ser explotadas.
+Il est possible pour les cybercriminels d'exploiter des vulnérabilités du noyau, mais ces vulnérabilités sont assez rares et nécessitent généralement des techniques sophistiquées pour être exploitées.
 
-### Aplicaciones del sistema
+### Applications du système
 
-Las aplicaciones del sistema pueden contener vulnerabilidades. Cuando son explotadas, pueden causar más daño que si se explotan aplicaciones de usuario, ya que suelen tener más privilegios para realizar cambios en el sistema subyacente. Un ejemplo común es el navegador integrado, que con frecuencia es objeto de explotaciones.
+Les applications du système peuvent contenir des vulnérabilités. Une fois exploitées, elles peuvent causer plus de dommages que l'exploitation des applications de l'utilisateur, car elles ont généralement plus de privilèges pour apporter des modifications au système sous-jacent. Un exemple courant est le navigateur intégré, qui est souvent exploité.
 
-### Aplicaciones de usuario
+### Applications de l'utilisateur
 
-Las aplicaciones de usuario son las menos privilegiadas. Sin embargo, si se les conceden los permisos, pueden acceder a información sensible del usuario, por lo que aún pueden causar daños considerables. Además, a veces pueden engañar o explotar el sistema subyacente para obtener más control.
+Les applications de l'utilisateur ont moins de privilèges. Toutefois, si les autorisations sont accordées, elles peuvent accéder à des informations personnelles de l'utilisateur, ce qui peut toujours causer beaucoup de tort. Parfois, elles peuvent également tromper ou exploiter le système sous-jacent pour obtenir plus de contrôle.
